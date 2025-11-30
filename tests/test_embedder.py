@@ -17,7 +17,7 @@ def test_extract_face_embedding_success(mock_represent):
     assert embedding.shape == (3,)
     assert embedding.tolist() == [0.1, 0.2, 0.3]
 
-@patch("face_embedder.DeepFace.represent")
+@patch("backend.face_utils.face_embedder.DeepFace.represent")
 def test_extract_face_embedding_failure(mock_represent):
     mock_represent.side_effect = Exception("Model error")
 
