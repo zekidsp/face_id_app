@@ -2,7 +2,7 @@ import numpy as np
 from unittest.mock import patch
 from backend.face_utils.face_embedder import extract_face_embedding
 
-@patch("face_embedder.DeepFace.represent")
+@patch("backend.face_utils.face_embedder.DeepFace.represent")
 def test_extract_face_embedding_success(mock_represent):
     # Mock DeepFace output
     mock_represent.return_value = [
