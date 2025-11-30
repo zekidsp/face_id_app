@@ -6,6 +6,8 @@ from backend.face_utils.face_matcher import load_database, find_best_match, enro
 import numpy as np
 import os
 
+import uvicorn
+
 app = FastAPI(title="Face Identification API", version="0.5")
 
 # Paths
@@ -83,3 +85,6 @@ async def enroll_face(file: UploadFile = File(...), name: str = Form(...)):
     return JSONResponse({"status": "enrolled", "name": name})
 
 
+# Entry point for Docker
+if __name__ == "__main__":
+    uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=False)

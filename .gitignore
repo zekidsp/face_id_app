@@ -17,3 +17,5 @@ Thumbs.db
 
 # Caches
 *.cache
+
+backend/detected_faces/
